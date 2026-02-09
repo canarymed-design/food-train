@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "catalog_id": "foods",
+  "catalog_version": "v1",
+  "updated_at": "2026-02-10T00:10:00Z",
+  "items": [
+    {
+      "id": "eggs_whole",
+      "i18n": { "name": { "es": "Huevos enteros", "en": "Whole eggs" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["animal", "protein_source", "contains_egg"]
+    },
+    {
+      "id": "avocado",
+      "i18n": { "name": { "es": "Aguacate", "en": "Avocado" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "fat_source", "fiber"]
+    },
+    {
+      "id": "chicken_breast_cooked",
+      "i18n": { "name": { "es": "Pechuga de pollo (cocida)", "en": "Chicken breast (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["animal", "protein_source"]
+    },
+    {
+      "id": "broccoli_cooked",
+      "i18n": { "name": { "es": "Brócoli (cocido)", "en": "Broccoli (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "vegetable", "fiber"]
+    },
+    {
+      "id": "olive_oil",
+      "i18n": { "name": { "es": "Aceite de oliva", "en": "Olive oil" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": 0, "carbs": 0, "fat": null },
+      "tags": ["plant", "fat_source"]
+    },
+    {
+      "id": "greek_yogurt_0",
+      "i18n": { "name": { "es": "Yogur griego 0%", "en": "Greek yogurt 0%" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["dairy", "protein_source", "contains_lactose"]
+    },
+    {
+      "id": "almonds",
+      "i18n": { "name": { "es": "Almendras", "en": "Almonds" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "fat_source", "nuts", "allergen_nuts"]
+    },
+    {
+      "id": "salmon_cooked",
+      "i18n": { "name": { "es": "Salmón (cocido)", "en": "Salmon (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": 0, "fat": null },
+      "tags": ["animal", "protein_source", "fish"]
+    },
+    {
+      "id": "spinach_raw",
+      "i18n": { "name": { "es": "Espinacas (crudas)", "en": "Spinach (raw)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "vegetable", "fiber"]
+    },
+    {
+      "id": "nuts_mixed",
+      "i18n": { "name": { "es": "Frutos secos mixtos", "en": "Mixed nuts" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "fat_source", "nuts", "allergen_nuts"]
+    },
+    {
+      "id": "turkey_breast_cooked",
+      "i18n": { "name": { "es": "Pechuga de pavo (cocida)", "en": "Turkey breast (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": 0, "fat": null },
+      "tags": ["animal", "protein_source"]
+    },
+    {
+      "id": "zucchini_cooked",
+      "i18n": { "name": { "es": "Calabacín (cocido)", "en": "Zucchini (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "vegetable", "fiber"]
+    },
+    {
+      "id": "protein_shake_whey",
+      "i18n": { "name": { "es": "Proteína whey (polvo)", "en": "Whey protein (powder)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["supplement", "protein_source", "contains_milk", "contains_lactose"]
+    },
+    {
+      "id": "white_fish_cooked",
+      "i18n": { "name": { "es": "Pescado blanco (cocido)", "en": "White fish (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": 0, "fat": null },
+      "tags": ["animal", "protein_source", "fish"]
+    },
+    {
+      "id": "salad_mix",
+      "i18n": { "name": { "es": "Ensalada variada", "en": "Mixed salad" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "vegetable", "fiber"]
+    },
+    {
+      "id": "oats",
+      "i18n": { "name": { "es": "Avena", "en": "Oats" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "carb_source", "contains_gluten_maybe"]
+    },
+    {
+      "id": "banana",
+      "i18n": { "name": { "es": "Plátano", "en": "Banana" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "fruit", "carb_source"]
+    },
+    {
+      "id": "brown_rice_cooked",
+      "i18n": { "name": { "es": "Arroz integral (cocido)", "en": "Brown rice (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "carb_source"]
+    },
+    {
+      "id": "vegetables_mixed",
+      "i18n": { "name": { "es": "Verduras mixtas", "en": "Mixed vegetables" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "vegetable", "fiber"]
+    },
+    {
+      "id": "apple",
+      "i18n": { "name": { "es": "Manzana", "en": "Apple" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "fruit", "carb_source"]
+    },
+    {
+      "id": "potato_boiled",
+      "i18n": { "name": { "es": "Patata (cocida)", "en": "Potato (boiled)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "carb_source"]
+    },
+    {
+      "id": "milk_semi",
+      "i18n": { "name": { "es": "Leche semidesnatada", "en": "Semi-skimmed milk" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["dairy", "contains_lactose"]
+    },
+    {
+      "id": "pasta_whole_cooked",
+      "i18n": { "name": { "es": "Pasta integral (cocida)", "en": "Whole-wheat pasta (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "carb_source", "contains_gluten"]
+    },
+    {
+      "id": "lean_beef_cooked",
+      "i18n": { "name": { "es": "Ternera magra (cocida)", "en": "Lean beef (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": 0, "fat": null },
+      "tags": ["animal", "protein_source"]
+    },
+    {
+      "id": "honey",
+      "i18n": { "name": { "es": "Miel", "en": "Honey" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": 0, "carbs": null, "fat": 0 },
+      "tags": ["carb_source"]
+    },
+    {
+      "id": "white_rice_cooked",
+      "i18n": { "name": { "es": "Arroz blanco (cocido)", "en": "White rice (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "carb_source"]
+    },
+    {
+      "id": "bread_white",
+      "i18n": { "name": { "es": "Pan blanco", "en": "White bread" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "carb_source", "contains_gluten"]
+    },
+    {
+      "id": "jam",
+      "i18n": { "name": { "es": "Mermelada", "en": "Jam" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": 0, "carbs": null, "fat": 0 },
+      "tags": ["carb_source"]
+    },
+    {
+      "id": "pasta_white_cooked",
+      "i18n": { "name": { "es": "Pasta blanca (cocida)", "en": "White pasta (cooked)" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "carb_source", "contains_gluten"]
+    },
+    {
+      "id": "fruit_mixed",
+      "i18n": { "name": { "es": "Fruta variada", "en": "Mixed fruit" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "fruit", "carb_source"]
+    },
+    {
+      "id": "cereal_cornflakes",
+      "i18n": { "name": { "es": "Copos de maíz (tipo Corn Flakes)", "en": "Corn flakes cereal" } },
+      "unit_basis": "per_100g",
+      "nutrition_100g": { "kcal": null, "protein": null, "carbs": null, "fat": null },
+      "tags": ["plant", "carb_source"]
+    }
+  ]
+}
