@@ -1,0 +1,29 @@
+{
+  "name": "Food & Train",
+  "short_name": "FoodTrain",
+  "description": "Plan diario inteligente de entrenamiento y nutrición",
+  "start_url": "/food-train/",
+  "scope": "/food-train/",
+  "display": "standalone",
+  "background_color": "#0b0b0b",
+  "theme_color": "#0b0b0b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/food-train/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/food-train/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/food-train/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
