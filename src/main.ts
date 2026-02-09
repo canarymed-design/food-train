@@ -3,7 +3,27 @@ import { bootstrap } from "./app/bootstrap";
 import { generateDayPlanIfNeeded } from "./engine/generateDayPlanIfNeeded";
 
 type Locale = "es" | "en";
+type DayFeedback = {
+  schema_version: 1;
+  date: string;
+  workout_completed: boolean;
+  menu_adherence_pct: number; // 0..100
+  updated_at: string;
+};
 
+function feedbackKey(date: string) {
+  return `app:feedback:${date}`;
+}
+
+function getFeedback(date: string): DayFeedback | null {
+  const raw = localStorage.getItem(feedbackKey(date));
+  if (!raw) return null;
+  try { return JSON.parse(raw); } catch { return null; }
+}
+
+function saveFeedback(fb: DayFeedback) {
+  localStorage.setItem(feedbackKey(fb.date), JSON.stringify(fb));
+}
 function getLocale(): Locale {
   const raw = localStorage.getItem("app:locale");
   try {
@@ -81,7 +101,14 @@ async function render() {
 
   const plan = getDayPlan(date);
   if (!plan) throw new Error("No DayPlan generated");
-
+  const existingFb = getFeedback(date);
+const feedback: DayFeedback = existingFb ?? {
+  schema_version: 1,
+  date,
+  workout_completed: false,
+  menu_adherence_pct: 0,
+  updated_at: new Date().toISOString()
+};
   const workouts = getCatalog<any[]>("app:catalog:workouts");
   const menus = getCatalog<any[]>("app:catalog:menus");
   const foods = getCatalog<any[]>("app:catalog:foods");
@@ -193,7 +220,32 @@ const renderMeals = () => {
           ${h(locale === "es" ? "Generado" : "Generated", String(plan.created_at ?? "-"))}
         </div>
       </article>
+      <article class="card">
+  <div class="card-h">
+    <div class="emoji">✅</div>
+    <div>
+      <div class="card-t">SEGUIMIENTO</div>
+      <div class="card-s">Hoy</div>
+    </div>
+  </div>
 
+  <div class="meta">
+    ${h("Entreno completado", feedback.workout_completed ? "Sí" : "No")}
+
+    <div class="row">
+      <div class="k">Adherencia menú</div>
+      <div class="v"><span id="fbPct">${feedback.menu_adherence_pct}</span>%</div>
+    </div>
+
+    <input id="fbAdh" type="range" min="0" max="100" step="5" value="${feedback.menu_adherence_pct}" />
+
+    ${h("Actualizado", String(feedback.updated_at))}
+  </div>
+
+  <div class="mini-actions">
+    <button class="btn" id="btnSaveFb">Guardar seguimiento</button>
+  </div>
+</article>
       <article class="card">
         <div class="card-h">
           <div class="emoji">🧪</div>
@@ -292,6 +344,20 @@ onTap("btnProfile", () => {
   removeDayPlan(date);
   generateDayPlanIfNeeded(date);
 
+  rerender();
+});
+  onTap("btnSaveFb", () => {
+  const adh = Number((document.getElementById("fbAdh") as HTMLInputElement | null)?.value ?? "0");
+
+  const fb: DayFeedback = {
+    schema_version: 1,
+    date,
+    workout_completed: true, // B1: lo marcamos “hecho” al guardar
+    menu_adherence_pct: Math.max(0, Math.min(100, adh)),
+    updated_at: new Date().toISOString()
+  };
+
+  saveFeedback(fb);
   rerender();
 });
 onTap("btnLocale", () => {
