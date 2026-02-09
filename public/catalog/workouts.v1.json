@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "catalog_id": "workouts",
+  "catalog_version": "v1",
+  "updated_at": "2026-02-09T22:25:00Z",
+  "items": [
+    {
+      "id": "wk_strength_upper_01",
+      "goal": "strength",
+      "type": "strength",
+      "duration_min": 65,
+      "level": "intermediate",
+      "muscle_focus": ["chest", "back", "shoulders", "arms"],
+      "equipment": "gym",
+      "training_load_score": 8,
+      "i18n": {
+        "name": { "es": "Fuerza Tren Superior", "en": "Upper Body Strength" },
+        "notes": {
+          "es": "Trabajo de fuerza clásica con cargas altas y descansos completos.",
+          "en": "Classic strength session with heavy loads and full rest."
+        }
+      },
+      "structure": {
+        "warmup": [
+          { "exercise_id": "band_pull_apart", "min": 3 },
+          { "exercise_id": "shoulder_mobility", "min": 4 }
+        ],
+        "exercises": [
+          { "exercise_id": "bench_press", "sets": 4, "reps": "4-6", "rest_sec": 180, "rpe": 8 },
+          { "exercise_id": "pull_up", "sets": 4, "reps": "5-8", "rest_sec": 150, "rpe": 8 },
+          { "exercise_id": "overhead_press", "sets": 3, "reps": "5-6", "rest_sec": 150, "rpe": 7 },
+          { "exercise_id": "barbell_row", "sets": 3, "reps": "6-8", "rest_sec": 120, "rpe": 7 }
+        ],
+        "cooldown": [{ "exercise_id": "upper_body_stretch", "min": 5 }]
+      },
+      "constraints": {
+        "avoid_if_injuries": ["shoulder", "elbow"],
+        "requires_equipment": ["barbell", "bench", "pullup_bar"]
+      },
+      "version": 1
+    },
+
+    {
+      "id": "wk_strength_lower_01",
+      "goal": "strength",
+      "type": "strength",
+      "duration_min": 70,
+      "level": "intermediate",
+      "muscle_focus": ["legs", "glutes"],
+      "equipment": "gym",
+      "training_load_score": 9,
+      "i18n": {
+        "name": { "es": "Fuerza Tren Inferior", "en": "Lower Body Strength" },
+        "notes": {
+          "es": "Sesión exigente orientada a fuerza y masa magra.",
+          "en": "Demanding lower body strength-focused session."
+        }
+      },
+      "structure": {
+        "warmup": [
+          { "exercise_id": "hip_mobility", "min": 4 },
+          { "exercise_id": "bodyweight_squat", "min": 3 }
+        ],
+        "exercises": [
+          { "exercise_id": "back_squat", "sets": 4, "reps": "4-6", "rest_sec": 180, "rpe": 8 },
+          { "exercise_id": "romanian_deadlift", "sets": 3, "reps": "6-8", "rest_sec": 150, "rpe": 7 },
+          { "exercise_id": "leg_press", "sets": 3, "reps": "8-10", "rest_sec": 120, "rpe": 7 }
+        ],
+        "cooldown": [{ "exercise_id": "lower_body_stretch", "min": 5 }]
+      },
+      "constraints": {
+        "avoid_if_injuries": ["knee", "lower_back"],
+        "requires_equipment": ["barbell", "rack", "leg_press"]
+      },
+      "version": 1
+    },
+
+    {
+      "id": "wk_fullbody_recomp_01",
+      "goal": "recomp",
+      "type": "strength",
+      "duration_min": 60,
+      "level": "intermediate",
+      "muscle_focus": ["full_body"],
+      "equipment": "gym",
+      "training_load_score": 7,
+      "i18n": {
+        "name": { "es": "Full Body Recompensación", "en": "Full Body Recomposition" },
+        "notes": {
+          "es": "Equilibrio entre fuerza y gasto energético.",
+          "en": "Balanced session for strength and energy expenditure."
+        }
+      },
+      "structure": {
+        "warmup": [{ "exercise_id": "dynamic_mobility", "min": 5 }],
+        "exercises": [
+          { "exercise_id": "deadlift", "sets": 3, "reps": "4-5", "rest_sec": 180, "rpe": 7 },
+          { "exercise_id": "incline_dumbbell_press", "sets": 3, "reps": "8-10", "rest_sec": 120, "rpe": 7 },
+          { "exercise_id": "lat_pulldown", "sets": 3, "reps": "8-10", "rest_sec": 120, "rpe": 7 },
+          { "exercise_id": "walking_lunge", "sets": 2, "reps": "10-12", "rest_sec": 90, "rpe": 6 }
+        ],
+        "cooldown": [{ "exercise_id": "full_body_stretch", "min": 5 }]
+      },
+      "constraints": {
+        "avoid_if_injuries": ["lower_back"],
+        "requires_equipment": ["barbell", "dumbbells", "cable_machine"]
+      },
+      "version": 1
+    },
+
+    {
+      "id": "wk_hiit_metabolic_01",
+      "goal": "fat_loss",
+      "type": "hiit",
+      "duration_min": 30,
+      "level": "intermediate",
+      "muscle_focus": ["full_body"],
+      "equipment": "gym",
+      "training_load_score": 7,
+      "i18n": {
+        "name": { "es": "HIIT Metabólico Corto", "en": "Short Metabolic HIIT" },
+        "notes": {
+          "es": "Alta intensidad para mejorar capacidad cardiovascular.",
+          "en": "High-intensity session to boost cardiovascular fitness."
+        }
+      },
+      "structure": {
+        "warmup": [{ "exercise_id": "light_cardio", "min": 5 }],
+        "exercises": [
+          { "exercise_id": "rowing_sprint", "sets": 6, "reps": "30s on / 60s off", "rest_sec": 0, "rpe": 8 },
+          { "exercise_id": "kettlebell_swing", "sets": 4, "reps": "15", "rest_sec": 60, "rpe": 7 }
+        ],
+        "cooldown": [{ "exercise_id": "breathing_mobility", "min": 5 }]
+      },
+      "constraints": {
+        "avoid_if_injuries": ["cardiac"],
+        "requires_equipment": ["rower", "kettlebell"]
+      },
+      "version": 1
+    },
+
+    {
+      "id": "wk_liss_recovery_01",
+      "goal": "fat_loss",
+      "type": "liss",
+      "duration_min": 45,
+      "level": "beginner",
+      "muscle_focus": ["cardio"],
+      "equipment": "gym",
+      "training_load_score": 4,
+      "i18n": {
+        "name": { "es": "Cardio Suave Recuperativo", "en": "Low Intensity Steady Cardio" },
+        "notes": {
+          "es": "Trabajo aeróbico suave para recuperación y quema de grasa.",
+          "en": "Low intensity aerobic work for recovery and fat burning."
+        }
+      },
+      "structure": {
+        "warmup": [{ "exercise_id": "easy_walk", "min": 5 }],
+        "exercises": [
+          { "exercise_id": "treadmill_walk", "sets": 1, "reps": "35-40 min", "rest_sec": 0, "rpe": 4 }
+        ],
+        "cooldown": [{ "exercise_id": "light_stretch", "min": 5 }]
+      },
+      "constraints": {
+        "avoid_if_injuries": [],
+        "requires_equipment": ["treadmill"]
+      },
+      "version": 1
+    }
+  ]
+}
