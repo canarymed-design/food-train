@@ -135,6 +135,7 @@ async function render() {
           ${h(locale === "es" ? "Macros" : "Macros", formatMacros(plan.targets.macros_g))}
           ${h(locale === "es" ? "Carbos" : "Carbs label", String(plan.targets.carb_label))}
           ${menu ? h(locale === "es" ? "Bias menú" : "Menu bias", String(menu.carb_bias)) : ""}
+          ${h(locale === "es" ? "Generado" : "Generated", String(plan.created_at ?? "-"))}
         </div>
       </article>
 
