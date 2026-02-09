@@ -96,7 +96,7 @@ async function render() {
     <header class="top">
       <div>
         <div class="brand">Food & Train</div>
-        <div class="sub">${locale === "es" ? "Plan de hoy" : "Today plan"} · ${date}</div>
+        <div class="sub">${locale === "es" ? "Plan de hoy" : "Today plan"} · ${date} · vUI-1</div>
       </div>
       <button class="btn ghost" id="btnLocale">${locale.toUpperCase()}</button>
     </header>
