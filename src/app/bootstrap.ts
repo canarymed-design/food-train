@@ -57,3 +57,6 @@ export async function bootstrap() {
     localStorage.setItem("app:catalog:exercises", JSON.stringify(e.items));
   }
 }
+if (!localStorage.getItem("app:index:dayplans")) {
+  localStorage.setItem("app:index:dayplans", JSON.stringify([]));
+}
