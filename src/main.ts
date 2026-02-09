@@ -264,7 +264,13 @@ const renderMeals = () => {
       <button class="btn danger" id="btnWipe">${locale === "es" ? "Borrar datos" : "Wipe data"}</button>
     </footer>
   `;
-
+const r = document.getElementById("fbAdh") as HTMLInputElement | null;
+const p = document.getElementById("fbPct") as HTMLElement | null;
+if (r && p) {
+  const sync = () => { p.textContent = String(r.value); };
+  r.addEventListener("input", sync);
+  sync();
+}
 // Handlers (iPhone-friendly)
 const onTap = (id: string, fn: () => void) => {
   const el = document.getElementById(id);
