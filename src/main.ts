@@ -175,7 +175,74 @@ const rerender = () => render().catch((err) => {
   const app = document.getElementById("app")!;
   app.innerHTML = `<h1 style="padding:16px">Error</h1><pre style="padding:16px;white-space:pre-wrap">${String(err?.stack ?? err)}</pre>`;
 });
+onTap("btnProfile", () => {
+  const raw = localStorage.getItem("app:profile");
+  const profile = raw ? JSON.parse(raw) : {
+    schema_version: 1,
+    sex: "male",
+    age: 40,
+    height_cm: 175,
+    weight_kg: 80,
+    activity_base: "moderate",
+    goal: "recomp",
+    training_experience: "intermediate",
+    training_days_per_week: 4,
+    training_time_pref: "morning",
+    equipment: "gym",
+    dietary_restrictions: [],
+    injuries: [],
+    updated_at: new Date().toISOString()
+  };
 
+  const weight = prompt(locale === "es" ? "Peso actual (kg)" : "Current weight (kg)", String(profile.weight_kg));
+  if (weight === null) return;
+
+  const goal = prompt(
+    locale === "es" ? "Objetivo: fat_loss / muscle_gain / recomp" : "Goal: fat_loss / muscle_gain / recomp",
+    String(profile.goal)
+  );
+  if (goal === null) return;
+
+  const days = prompt(locale === "es" ? "Días de entreno por semana (1-7)" : "Training days per week (1-7)", String(profile.training_days_per_week));
+  if (days === null) return;
+
+  const w = Number(weight);
+  const d = Number(days);
+
+  if (!Number.isFinite(w) || w <= 0) {
+    alert(locale === "es" ? "Peso inválido" : "Invalid weight");
+    return;
+  }
+  if (!Number.isFinite(d) || d < 1 || d > 7) {
+    alert(locale === "es" ? "Días inválidos (1-7)" : "Invalid days (1-7)");
+    return;
+  }
+  if (!["fat_loss", "muscle_gain", "recomp"].includes(goal)) {
+    alert(locale === "es" ? "Objetivo inválido" : "Invalid goal");
+    return;
+  }
+
+  profile.weight_kg = w;
+  profile.goal = goal;
+  profile.training_days_per_week = d;
+  profile.updated_at = new Date().toISOString();
+
+  localStorage.setItem("app:profile", JSON.stringify(profile));
+
+  // Compatibilidad con motor actual (usa app:user)
+  const userRaw = localStorage.getItem("app:user");
+  const u = userRaw ? JSON.parse(userRaw) : {};
+  u.weight_kg = profile.weight_kg;
+  u.primary_goal = profile.goal;
+  u.days_available_per_week = profile.training_days_per_week;
+  localStorage.setItem("app:user", JSON.stringify(u));
+
+  // Para ver efecto inmediato, regeneramos el plan de hoy
+  removeDayPlan(date);
+  generateDayPlanIfNeeded(date);
+
+  rerender();
+});
 onTap("btnLocale", () => {
   const next: Locale = locale === "es" ? "en" : "es";
   setLocale(next);
