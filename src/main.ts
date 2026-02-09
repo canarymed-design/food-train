@@ -84,14 +84,64 @@ async function render() {
 
   const workouts = getCatalog<any[]>("app:catalog:workouts");
   const menus = getCatalog<any[]>("app:catalog:menus");
-
+  const foods = getCatalog<any[]>("app:catalog:foods");
   const workout = plan.workout_id ? workouts.find((w) => w.id === plan.workout_id) : null;
   const menu = menus.find((m) => m.id === plan.menu_id);
 
   const workoutName = workout ? titleFromI18n(workout.i18n, locale, workout.id) : (locale === "es" ? "Descanso" : "Rest day");
   const workoutNotes = workout ? (workout.i18n?.notes?.[locale] ?? workout.i18n?.notes?.es ?? "") : (plan.meta?.reason ?? "");
   const menuTitle = menu ? titleFromI18n(menu.i18n, locale, menu.id) : plan.menu_id;
+  const slotLabel = (slot: string) => {
+  const map: Record<string, { es: string; en: string }> = {
+    breakfast: { es: "Desayuno", en: "Breakfast" },
+    lunch: { es: "Almuerzo", en: "Lunch" },
+    snack: { es: "Merienda", en: "Snack" },
+    dinner: { es: "Cena", en: "Dinner" },
+  };
+  return (map[slot]?.[locale] ?? slot);
+};
 
+const foodNameById = (id: string) => {
+  const f = foods.find((x) => x.id === id);
+  if (!f) return id;
+  // Soportamos i18n.title o i18n.name según cómo lo tengas en foods
+  const t = f.i18n?.title ?? f.i18n?.name;
+  return t?.[locale] ?? t?.es ?? t?.en ?? f.name ?? id;
+};
+
+const renderMealItems = (items: any[]) => {
+  if (!items?.length) return `<div class="muted">${locale === "es" ? "Sin items" : "No items"}</div>`;
+  return `
+    <div class="meal-list">
+      ${items.map((it) => {
+        if (it.type === "food") {
+          const name = foodNameById(it.id);
+          const grams = it.grams != null ? `${it.grams} g` : "";
+          return `<div class="meal-row"><div class="meal-name">${name}</div><div class="meal-qty">${grams}</div></div>`;
+        }
+        // Fallback por si luego metes recetas/suplementos
+        return `<div class="meal-row"><div class="meal-name">${it.id ?? "item"}</div><div class="meal-qty">${it.grams ? `${it.grams} g` : ""}</div></div>`;
+      }).join("")}
+    </div>
+  `;
+};
+
+const renderMeals = () => {
+  if (!menu?.meals?.length) return "";
+  return `
+    <div class="meals">
+      ${menu.meals.map((m: any) => `
+        <details class="meal">
+          <summary>
+            <span>${slotLabel(m.slot)}</span>
+            <span class="muted">${m.items?.length ?? 0} ${locale === "es" ? "items" : "items"}</span>
+          </summary>
+          ${renderMealItems(m.items)}
+        </details>
+      `).join("")}
+    </div>
+  `;
+};
   const app = document.getElementById("app")!;
   app.innerHTML = `
 <header class="top">
@@ -122,7 +172,7 @@ async function render() {
           ${workout ? h(locale === "es" ? "Tipo" : "Type", String(workout.type)) : ""}
           ${workout ? h(locale === "es" ? "Carga" : "Load", String(plan.training_load_score)) : h(locale === "es" ? "Carga" : "Load", "0")}
         </div>
-
+        ${renderMeals()}
         ${workoutNotes ? `<div class="note">${workoutNotes}</div>` : ``}
       </article>
 
