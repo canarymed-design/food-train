@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "catalog_id": "exercises",
+  "catalog_version": "v1",
+  "updated_at": "2026-02-09T22:25:00Z",
+  "items": [
+    { "id": "band_pull_apart", "i18n": { "name": { "es": "Pull-aparts con banda", "en": "Band pull-aparts" } }, "primary_muscles": ["upper_back"], "equipment_tags": ["band"] },
+    { "id": "shoulder_mobility", "i18n": { "name": { "es": "Movilidad de hombro", "en": "Shoulder mobility" } }, "primary_muscles": ["shoulders"], "equipment_tags": [] },
+
+    { "id": "bench_press", "i18n": { "name": { "es": "Press banca", "en": "Bench press" } }, "primary_muscles": ["chest"], "equipment_tags": ["barbell", "bench"] },
+    { "id": "pull_up", "i18n": { "name": { "es": "Dominadas", "en": "Pull-up" } }, "primary_muscles": ["back"], "equipment_tags": ["pullup_bar"] },
+    { "id": "overhead_press", "i18n": { "name": { "es": "Press militar", "en": "Overhead press" } }, "primary_muscles": ["shoulders"], "equipment_tags": ["barbell"] },
+    { "id": "barbell_row", "i18n": { "name": { "es": "Remo con barra", "en": "Barbell row" } }, "primary_muscles": ["back"], "equipment_tags": ["barbell"] },
+    { "id": "upper_body_stretch", "i18n": { "name": { "es": "Estiramientos tren superior", "en": "Upper body stretching" } }, "primary_muscles": ["mobility"], "equipment_tags": [] },
+
+    { "id": "hip_mobility", "i18n": { "name": { "es": "Movilidad de cadera", "en": "Hip mobility" } }, "primary_muscles": ["hips"], "equipment_tags": [] },
+    { "id": "bodyweight_squat", "i18n": { "name": { "es": "Sentadilla con peso corporal", "en": "Bodyweight squat" } }, "primary_muscles": ["legs"], "equipment_tags": [] },
+    { "id": "back_squat", "i18n": { "name": { "es": "Sentadilla trasera", "en": "Back squat" } }, "primary_muscles": ["legs"], "equipment_tags": ["barbell", "rack"] },
+    { "id": "romanian_deadlift", "i18n": { "name": { "es": "Peso muerto rumano", "en": "Romanian deadlift" } }, "primary_muscles": ["hamstrings"], "equipment_tags": ["barbell"] },
+    { "id": "leg_press", "i18n": { "name": { "es": "Prensa de piernas", "en": "Leg press" } }, "primary_muscles": ["legs"], "equipment_tags": ["leg_press"] },
+    { "id": "lower_body_stretch", "i18n": { "name": { "es": "Estiramientos tren inferior", "en": "Lower body stretching" } }, "primary_muscles": ["mobility"], "equipment_tags": [] },
+
+    { "id": "dynamic_mobility", "i18n": { "name": { "es": "Movilidad dinámica", "en": "Dynamic mobility" } }, "primary_muscles": ["mobility"], "equipment_tags": [] },
+    { "id": "deadlift", "i18n": { "name": { "es": "Peso muerto", "en": "Deadlift" } }, "primary_muscles": ["posterior_chain"], "equipment_tags": ["barbell"] },
+    { "id": "incline_dumbbell_press", "i18n": { "name": { "es": "Press inclinado con mancuernas", "en": "Incline dumbbell press" } }, "primary_muscles": ["chest"], "equipment_tags": ["dumbbells", "bench"] },
+    { "id": "lat_pulldown", "i18n": { "name": { "es": "Jalón al pecho", "en": "Lat pulldown" } }, "primary_muscles": ["back"], "equipment_tags": ["cable_machine"] },
+    { "id": "walking_lunge", "i18n": { "name": { "es": "Zancadas caminando", "en": "Walking lunge" } }, "primary_muscles": ["legs"], "equipment_tags": [] },
+    { "id": "full_body_stretch", "i18n": { "name": { "es": "Estiramientos cuerpo completo", "en": "Full body stretching" } }, "primary_muscles": ["mobility"], "equipment_tags": [] },
+
+    { "id": "light_cardio", "i18n": { "name": { "es": "Cardio suave", "en": "Light cardio" } }, "primary_muscles": ["cardio"], "equipment_tags": [] },
+    { "id": "rowing_sprint", "i18n": { "name": { "es": "Sprints en remo", "en": "Rowing sprints" } }, "primary_muscles": ["cardio"], "equipment_tags": ["rower"] },
+    { "id": "kettlebell_swing", "i18n": { "name": { "es": "Balanceo con kettlebell", "en": "Kettlebell swing" } }, "primary_muscles": ["posterior_chain"], "equipment_tags": ["kettlebell"] },
+    { "id": "breathing_mobility", "i18n": { "name": { "es": "Respiración y movilidad", "en": "Breathing & mobility" } }, "primary_muscles": ["mobility"], "equipment_tags": [] },
+
+    { "id": "easy_walk", "i18n": { "name": { "es": "Caminata fácil", "en": "Easy walk" } }, "primary_muscles": ["cardio"], "equipment_tags": [] },
+    { "id": "treadmill_walk", "i18n": { "name": { "es": "Caminata en cinta", "en": "Treadmill walk" } }, "primary_muscles": ["cardio"], "equipment_tags": ["treadmill"] },
+    { "id": "light_stretch", "i18n": { "name": { "es": "Estiramientos suaves", "en": "Light stretching" } }, "primary_muscles": ["mobility"], "equipment_tags": [] }
+  ]
+}
