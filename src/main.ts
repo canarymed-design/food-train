@@ -93,13 +93,17 @@ async function render() {
 
   const app = document.getElementById("app")!;
   app.innerHTML = `
-    <header class="top">
-      <div>
-        <div class="brand">Food & Train</div>
-        <div class="sub">${locale === "es" ? "Plan de hoy" : "Today plan"} · ${date} · vUI-1</div>
-      </div>
-      <button class="btn ghost" id="btnLocale">${locale.toUpperCase()}</button>
-    </header>
+<header class="top">
+  <div>
+    <div class="brand">Food & Train</div>
+    <div class="sub">Plan de hoy · ${date} · vUI-1</div>
+  </div>
+
+  <div class="top-actions">
+    <button class="btn ghost" id="btnProfile">👤</button>
+    <button class="btn ghost" id="btnLocale">${locale.toUpperCase()}</button>
+  </div>
+</header>
 
     <section class="grid">
       <article class="card">
