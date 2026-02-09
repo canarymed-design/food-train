@@ -1,3 +1,4 @@
+import { getOrCreateDefaultProfile } from "./profile";
 async function loadJSON<T>(path: string): Promise<T> {
   const base = import.meta.env.BASE_URL; // "/food-train/"
   const res = await fetch(base + path);
@@ -18,16 +19,23 @@ export async function bootstrap() {
 
   ensure("app:locale", "es");
 
-  // User demo (si no existe)
-  ensure("app:user", {
-    sex: "male",
-    age: 50,
-    height_cm: 176,
-    weight_kg: 82,
-    primary_goal: "recomp",
-    equipment: "gym",
-    injuries: []
-  });
+// Perfil usuario (fuente de verdad)
+const profile = getOrCreateDefaultProfile();
+
+// Mantener compatibilidad con el motor actual (app:user)
+ensure("app:user", {
+  sex: profile.sex,
+  age: profile.age,
+  height_cm: profile.height_cm,
+  weight_kg: profile.weight_kg,
+  primary_goal: profile.goal, // ojo: profile.goal -> primary_goal
+  equipment: profile.equipment,
+  injuries: profile.injuries ?? [],
+  days_available_per_week: profile.training_days_per_week
+});
+
+// Si el usuario cambia el perfil después, aquí NO lo sobreescribimos.
+// En siguiente iteración, el motor leerá directamente app:profile.
 
   // Carga catálogos y rules desde /public solo si no existen
   if (!localStorage.getItem("app:ruleset:rules_v1")) {
