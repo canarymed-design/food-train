@@ -229,8 +229,13 @@ const renderMeals = () => {
     </div>
   </div>
 
-  <div class="meta">
-    ${h("Entreno completado", feedback.workout_completed ? "Sí" : "No")}
+<div class="meta">
+  <div class="row">
+    <div class="k">Entreno completado</div>
+    <div class="v">
+      <input type="checkbox" id="fbTrainDone" ${feedback.workout_completed ? "checked" : ""} />
+    </div>
+  </div>
 
     <div class="row">
       <div class="k">Adherencia menú</div>
