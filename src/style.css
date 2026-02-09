@@ -180,3 +180,66 @@ body {
   gap:10px;
   align-items:center;
 }
+.meals{
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.meal{
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+.meal summary{
+  list-style: none;
+  cursor: pointer;
+  padding: 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.92);
+}
+
+.meal summary::-webkit-details-marker{
+  display: none;
+}
+
+.meal-list{
+  padding: 0 12px 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.meal-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 10px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.meal-name{
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.90);
+}
+
+.meal-qty{
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.70);
+  white-space: nowrap;
+}
+
+.muted{
+  color: rgba(255,255,255,0.60);
+  font-size: 13px;
+  font-weight: 700;
+}
