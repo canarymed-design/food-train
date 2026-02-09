@@ -382,6 +382,20 @@ onTap("btnWipe", () => {
   wipeAppStorage();
   rerender();
 });
+  onTap("btnSaveFeedback", () => {
+  const done = (document.getElementById("fbTrainDone") as HTMLInputElement)?.checked ?? false;
+  const adh = Number((document.getElementById("fbAdh") as HTMLInputElement)?.value ?? 0);
+  const note = (document.getElementById("fbNote") as HTMLTextAreaElement)?.value ?? "";
+
+  const payload = {
+    training_done: done,
+    menu_adherence: adh,
+    note,
+    created_at: new Date().toISOString()
+  };
+
+  localStorage.setItem(`app:feedback:${date}`, JSON.stringify(payload));
+});
 }
 
 render().catch((err) => {
