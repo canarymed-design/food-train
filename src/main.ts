@@ -388,18 +388,23 @@ onTap("btnWipe", () => {
   rerender();
 });
   onTap("btnSaveFeedback", () => {
-  const done = (document.getElementById("fbTrainDone") as HTMLInputElement)?.checked ?? false;
-  const adh = Number((document.getElementById("fbAdh") as HTMLInputElement)?.value ?? 0);
-  const note = (document.getElementById("fbNote") as HTMLTextAreaElement)?.value ?? "";
+  const done =
+    (document.getElementById("fbTrainDone") as HTMLInputElement | null)?.checked ?? false;
 
-  const payload = {
-    training_done: done,
-    menu_adherence: adh,
-    note,
-    created_at: new Date().toISOString()
+  const adh = Number(
+    (document.getElementById("fbAdh") as HTMLInputElement | null)?.value ?? "0"
+  );
+
+  const fb: DayFeedback = {
+    schema_version: 1,
+    date,
+    workout_completed: done,
+    menu_adherence_pct: Math.max(0, Math.min(100, adh)),
+    updated_at: new Date().toISOString()
   };
 
-  localStorage.setItem(`app:feedback:${date}`, JSON.stringify(payload));
+  saveFeedback(fb);
+  rerender();
 });
 }
 
