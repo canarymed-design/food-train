@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "catalog_id": "menus",
+  "catalog_version": "v1",
+  "updated_at": "2026-02-10T00:05:00Z",
+  "items": [
+    {
+      "id": "menu_low_01",
+      "kcal_total": 1885,
+      "macros_g": { "protein": 165, "carbs": 115, "fat": 85 },
+      "carb_bias": "low",
+      "timing_style": "balanced",
+      "restriction_tags": [],
+      "i18n": {
+        "title": { "es": "Low carb equilibrado 1", "en": "Low carb balanced 1" },
+        "notes": { "es": "Menú saciante y estable para días tranquilos.", "en": "Satiating and stable menu." }
+      },
+      "meals": [
+        { "slot": "breakfast", "items": [{ "type": "food", "id": "eggs_whole", "grams": 150 }, { "type": "food", "id": "avocado", "grams": 80 }] },
+        { "slot": "lunch", "items": [{ "type": "food", "id": "chicken_breast_cooked", "grams": 200 }, { "type": "food", "id": "broccoli_cooked", "grams": 250 }, { "type": "food", "id": "olive_oil", "grams": 15 }] },
+        { "slot": "snack", "items": [{ "type": "food", "id": "greek_yogurt_0", "grams": 250 }, { "type": "food", "id": "almonds", "grams": 25 }] },
+        { "slot": "dinner", "items": [{ "type": "food", "id": "salmon_cooked", "grams": 180 }, { "type": "food", "id": "spinach_raw", "grams": 100 }] }
+      ],
+      "version": 1
+    },
+    {
+      "id": "menu_low_02",
+      "kcal_total": 1872,
+      "macros_g": { "protein": 160, "carbs": 110, "fat": 88 },
+      "carb_bias": "low",
+      "timing_style": "post_workout",
+      "restriction_tags": [],
+      "i18n": {
+        "title": { "es": "Low carb recuperación", "en": "Low carb recovery" },
+        "notes": { "es": "Proteína alta con hidratos controlados.", "en": "High protein, controlled carbs." }
+      },
+      "meals": [
+        { "slot": "breakfast", "items": [{ "type": "food", "id": "greek_yogurt_0", "grams": 300 }, { "type": "food", "id": "nuts_mixed", "grams": 30 }] },
+        { "slot": "lunch", "items": [{ "type": "food", "id": "turkey_breast_cooked", "grams": 220 }, { "type": "food", "id": "zucchini_cooked", "grams": 300 }, { "type": "food", "id": "olive_oil", "grams": 15 }] },
+        { "slot": "snack", "items": [{ "type": "food", "id": "protein_shake_whey", "grams": 30 }] },
+        { "slot": "dinner", "items": [{ "type": "food", "id": "white_fish_cooked", "grams": 220 }, { "type": "food", "id": "salad_mix", "grams": 150 }, { "type": "food", "id": "olive_oil", "grams": 10 }] }
+      ],
+      "version": 1
+    },
+    {
+      "id": "menu_medium_01",
+      "kcal_total": 2110,
+      "macros_g": { "protein": 170, "carbs": 200, "fat": 70 },
+      "carb_bias": "medium",
+      "timing_style": "balanced",
+      "restriction_tags": [],
+      "i18n": {
+        "title": { "es": "Carbohidrato medio equilibrado 1", "en": "Medium carb balanced 1" },
+        "notes": { "es": "Menú polivalente para actividad moderada.", "en": "Versatile menu for moderate activity." }
+      },
+      "meals": [
+        { "slot": "breakfast", "items": [{ "type": "food", "id": "oats", "grams": 70 }, { "type": "food", "id": "greek_yogurt_0", "grams": 200 }, { "type": "food", "id": "banana", "grams": 100 }] },
+        { "slot": "lunch", "items": [{ "type": "food", "id": "chicken_breast_cooked", "grams": 180 }, { "type": "food", "id": "brown_rice_cooked", "grams": 200 }, { "type": "food", "id": "vegetables_mixed", "grams": 200 }] },
+        { "slot": "snack", "items": [{ "type": "food", "id": "apple", "grams": 180 }, { "type": "food", "id": "almonds", "grams": 20 }] },
+        { "slot": "dinner", "items": [{ "type": "food", "id": "eggs_whole", "grams": 180 }, { "type": "food", "id": "potato_boiled", "grams": 250 }] }
+      ],
+      "version": 1
+    },
+    {
+      "id": "menu_medium_02",
+      "kcal_total": 2188,
+      "macros_g": { "protein": 175, "carbs": 210, "fat": 72 },
+      "carb_bias": "medium",
+      "timing_style": "post_workout",
+      "restriction_tags": [],
+      "i18n": {
+        "title": { "es": "Carbohidrato medio post-entreno", "en": "Medium carb post-workout" },
+        "notes": { "es": "Reposición de glucógeno con proteína adecuada.", "en": "Glycogen replenishment with adequate protein." }
+      },
+      "meals": [
+        { "slot": "breakfast", "items": [{ "type": "food", "id": "oats", "grams": 80 }, { "type": "food", "id": "milk_semi", "grams": 250 }] },
+        { "slot": "lunch", "items": [{ "type": "food", "id": "pasta_whole_cooked", "grams": 250 }, { "type": "food", "id": "lean_beef_cooked", "grams": 180 }] },
+        { "slot": "snack", "items": [{ "type": "food", "id": "banana", "grams": 120 }, { "type": "food", "id": "protein_shake_whey", "grams": 30 }] },
+        { "slot": "dinner", "items": [{ "type": "food", "id": "salmon_cooked", "grams": 160 }, { "type": "food", "id": "vegetables_mixed", "grams": 200 }] }
+      ],
+      "version": 1
+    },
+    {
+      "id": "menu_high_01",
+      "kcal_total": 2505,
+      "macros_g": { "protein": 180, "carbs": 300, "fat": 65 },
+      "carb_bias": "high",
+      "timing_style": "pre_workout",
+      "restriction_tags": [],
+      "i18n": {
+        "title": { "es": "Alto en carbohidratos rendimiento", "en": "High carb performance" },
+        "notes": { "es": "Pensado para días de alta carga.", "en": "Designed for high load days." }
+      },
+      "meals": [
+        { "slot": "breakfast", "items": [{ "type": "food", "id": "oats", "grams": 100 }, { "type": "food", "id": "banana", "grams": 120 }, { "type": "food", "id": "honey", "grams": 15 }] },
+        { "slot": "lunch", "items": [{ "type": "food", "id": "white_rice_cooked", "grams": 300 }, { "type": "food", "id": "chicken_breast_cooked", "grams": 200 }] },
+        { "slot": "snack", "items": [{ "type": "food", "id": "bread_white", "grams": 100 }, { "type": "food", "id": "jam", "grams": 30 }] },
+        { "slot": "dinner", "items": [{ "type": "food", "id": "pasta_white_cooked", "grams": 250 }, { "type": "food", "id": "white_fish_cooked", "grams": 200 }] }
+      ],
+      "version": 1
+    },
+    {
+      "id": "menu_high_02",
+      "kcal_total": 2472,
+      "macros_g": { "protein": 175, "carbs": 290, "fat": 68 },
+      "carb_bias": "high",
+      "timing_style": "post_workout",
+      "restriction_tags": [],
+      "i18n": {
+        "title": { "es": "Alto en carbohidratos recuperación", "en": "High carb recovery" },
+        "notes": { "es": "Recarga energética tras esfuerzo intenso.", "en": "Energy reload after intense effort." }
+      },
+      "meals": [
+        { "slot": "breakfast", "items": [{ "type": "food", "id": "bread_white", "grams": 120 }, { "type": "food", "id": "greek_yogurt_0", "grams": 200 }, { "type": "food", "id": "fruit_mixed", "grams": 150 }] },
+        { "slot": "lunch", "items": [{ "type": "food", "id": "potato_boiled", "grams": 350 }, { "type": "food", "id": "lean_beef_cooked", "grams": 200 }] },
+        { "slot": "snack", "items": [{ "type": "food", "id": "banana", "grams": 150 }, { "type": "food", "id": "cereal_cornflakes", "grams": 50 }] },
+        { "slot": "dinner", "items": [{ "type": "food", "id": "white_rice_cooked", "grams": 250 }, { "type": "food", "id": "eggs_whole", "grams": 180 }] }
+      ],
+      "version": 1
+    }
+  ]
+}
