@@ -14,6 +14,7 @@ function getLocale(): Locale {
   }
 }
 
+
 function setLocale(l: Locale) {
   localStorage.setItem("app:locale", JSON.stringify(l));
 }
