@@ -158,23 +158,36 @@ async function render() {
     </footer>
   `;
 
-  // Handlers
-  document.getElementById("btnLocale")?.addEventListener("click", () => {
-    const next: Locale = locale === "es" ? "en" : "es";
-    setLocale(next);
-    location.reload();
-  });
+// Handlers (iPhone-friendly)
+const onTap = (id: string, fn: () => void) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  // pointerup suele ir fino en iOS; touchend es el plan B
+  el.addEventListener("pointerup", (e) => { e.preventDefault(); fn(); });
+  el.addEventListener("touchend", (e) => { e.preventDefault(); fn(); }, { passive: false });
+};
 
-  document.getElementById("btnRegen")?.addEventListener("click", () => {
-    removeDayPlan(date);
-    generateDayPlanIfNeeded(date);
-    location.reload();
-  });
+const rerender = () => render().catch((err) => {
+  const app = document.getElementById("app")!;
+  app.innerHTML = `<h1 style="padding:16px">Error</h1><pre style="padding:16px;white-space:pre-wrap">${String(err?.stack ?? err)}</pre>`;
+});
 
-  document.getElementById("btnWipe")?.addEventListener("click", () => {
-    wipeAppStorage();
-    location.reload();
-  });
+onTap("btnLocale", () => {
+  const next: Locale = locale === "es" ? "en" : "es";
+  setLocale(next);
+  rerender();
+});
+
+onTap("btnRegen", () => {
+  removeDayPlan(date);
+  generateDayPlanIfNeeded(date);
+  rerender();
+});
+
+onTap("btnWipe", () => {
+  wipeAppStorage();
+  rerender();
+});
 }
 
 render().catch((err) => {
