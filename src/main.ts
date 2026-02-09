@@ -8,6 +8,7 @@ type DayFeedback = {
   date: string;
   workout_completed: boolean;
   menu_adherence_pct: number; // 0..100
+  notes?: string;
   updated_at: string;
 };
 
@@ -243,7 +244,10 @@ const renderMeals = () => {
     </div>
 
     <input id="fbAdh" type="range" min="0" max="100" step="5" value="${feedback.menu_adherence_pct}" />
-
+<div class="row row-col">
+  <div class="k">Notas</div>
+  <textarea class="textarea" id="fbNotes" rows="3" placeholder="Cómo fue el día...">${feedback.notes ?? ""}</textarea>
+</div>
     ${h("Actualizado", String(feedback.updated_at))}
   </div>
 
@@ -394,14 +398,15 @@ onTap("btnWipe", () => {
   const adh = Number(
     (document.getElementById("fbAdh") as HTMLInputElement | null)?.value ?? "0"
   );
-
+  const notes = (document.getElementById("fbNotes") as HTMLTextAreaElement | null)?.value ?? "";
   const fb: DayFeedback = {
-    schema_version: 1,
-    date,
-    workout_completed: done,
-    menu_adherence_pct: Math.max(0, Math.min(100, adh)),
-    updated_at: new Date().toISOString()
-  };
+  schema_version: 1,
+  date,
+  workout_completed: done,
+  menu_adherence_pct: Math.max(0, Math.min(100, adh)),
+  ...(notes.trim() ? { notes: notes.trim() } : {}),
+  updated_at: new Date().toISOString()
+};
 
   saveFeedback(fb);
   rerender();
