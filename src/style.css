@@ -262,3 +262,123 @@ body {
   align-items: stretch;
   gap: 8px;
 }
+/* =========================
+   Coach UI (Opción 2)
+   ========================= */
+
+.coach-head {
+  margin: 6px 0 14px;
+}
+
+.coach-title {
+  font-size: 22px;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+}
+
+.coach-sub {
+  margin-top: 4px;
+  color: var(--muted2);
+  font-size: 13px;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.chip {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.tiny { font-size: 12px; }
+
+.btn.primary {
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.btn.primary:disabled {
+  opacity: 0.65;
+}
+
+.sticky-cta {
+  position: sticky;
+  bottom: 86px; /* por encima de la tabbar */
+  margin-top: 12px;
+  padding-top: 10px;
+  background: linear-gradient(to top, rgba(11,11,11,0.98), rgba(11,11,11,0.0));
+}
+
+.sticky-cta .btn {
+  width: 100%;
+  padding: 14px 14px;
+  border-radius: 14px;
+}
+
+/* Workout blocks */
+.wk-block { margin-top: 12px; }
+.wk-block-h {
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.wk-list { display: grid; gap: 10px; }
+
+.wk-row {
+  padding: 10px 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+}
+
+.wk-name { font-weight: 750; }
+.wk-meta { color: var(--muted2); font-size: 12px; margin-top: 4px; }
+
+/* =========================
+   Tab bar
+   ========================= */
+
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 74px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(11,11,11,0.92);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.tab {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted2);
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  padding: 8px 6px;
+  cursor: pointer;
+}
+
+.tab .t-ico { font-size: 18px; line-height: 18px; }
+.tab .t-lbl { font-size: 12px; font-weight: 650; }
+
+.tab.active {
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.10);
+}
