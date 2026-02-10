@@ -308,28 +308,58 @@ async function render() {
     </section>
 
     <section class="grid">
-      <article class="card">
-        <div class="card-h">
-          <div class="emoji">🏋️</div>
-          <div>
-            <div class="card-t">${locale === "es" ? "Entreno de hoy" : "Today's workout"}</div>
-            <div class="card-s">${workoutName}</div>
-          </div>
-        </div>
+      <article class="card coach-card">
+  <div class="coach-card-hero">
+    <div class="coach-card-hero-text">
+      <div class="coach-kicker">${locale === "es" ? "Tu entreno de hoy" : "Your workout today"}</div>
+      <div class="coach-title-hero">${workoutName}</div>
 
-        <div class="meta">
-          ${h(locale === "es" ? "Día de entreno" : "Training day", plan.meta?.is_training_day ? (locale === "es" ? "Sí" : "Yes") : locale === "es" ? "No" : "No")}
-          ${workout ? h(locale === "es" ? "Duración" : "Duration", `${workout.duration_min} min`) : ""}
-          ${workout ? h(locale === "es" ? "Tipo" : "Type", String(workout.type)) : ""}
-        </div>
+      <div class="coach-subline">
+        ${
+          workout
+            ? `${workout.duration_min} min · ${String(workout.type)}`
+            : (locale === "es" ? "Día de descanso" : "Rest day")
+        }
+      </div>
 
-        ${workoutNotes ? `<div class="note">${workoutNotes}</div>` : ``}
+      ${workoutNotes ? `<div class="coach-note">${workoutNotes}</div>` : ``}
 
-        <div class="mini-actions">
-          <button class="btn" id="btnStartWorkout">${locale === "es" ? "Empezar" : "Start"}</button>
-          <button class="btn ghost" id="btnViewWorkout">${locale === "es" ? "Ver" : "View"}</button>
-        </div>
-      </article>
+      <div class="coach-cta-row">
+        <button class="btn coach-primary" id="btnStartWorkout">
+          ${locale === "es" ? "Empezar entreno" : "Start workout"}
+        </button>
+        <button class="btn coach-link" id="btnViewWorkout">
+          ${locale === "es" ? "Ver detalles" : "View details"} →
+        </button>
+      </div>
+    </div>
+
+    <div class="coach-card-hero-media">
+      <img
+        class="coach-img"
+        src="/food-train/assets/mock/workout.jpg"
+        alt="Workout"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <div class="coach-card-mini">
+    <div class="mini-pill">
+      <span class="mini-label">${locale === "es" ? "Día de entreno" : "Training day"}</span>
+      <span class="mini-value">${
+        plan.meta?.is_training_day
+          ? (locale === "es" ? "Sí" : "Yes")
+          : (locale === "es" ? "No" : "No")
+      }</span>
+    </div>
+
+    <div class="mini-pill">
+      <span class="mini-label">${locale === "es" ? "Carga" : "Load"}</span>
+      <span class="mini-value">${plan.training_load_score ?? 0}</span>
+    </div>
+  </div>
+</article>
 
       <article class="card">
         <div class="card-h">
