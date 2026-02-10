@@ -1,8 +1,8 @@
 {
   "name": "Food & Train",
-  "short_name": "FoodTrain",
+  "short_name": "F&T"
   "description": "Plan diario inteligente de entrenamiento y nutrición",
-  "start_url": "/food-train/",
+  "start_url": "/food-train/?source=pwa"
   "scope": "/food-train/",
   "display": "standalone",
   "background_color": "#0b0b0b",
