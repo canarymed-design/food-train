@@ -363,13 +363,22 @@ onTap("btnProfile", () => {
   rerender();
 });
   onTap("btnSaveFb", () => {
-  const adh = Number((document.getElementById("fbAdh") as HTMLInputElement | null)?.value ?? "0");
+  const done =
+    (document.getElementById("fbTrainDone") as HTMLInputElement | null)?.checked ?? false;
+
+  const adh = Number(
+    (document.getElementById("fbAdh") as HTMLInputElement | null)?.value ?? "0"
+  );
+
+  const notes =
+    (document.getElementById("fbNotes") as HTMLTextAreaElement | null)?.value ?? "";
 
   const fb: DayFeedback = {
     schema_version: 1,
     date,
-    workout_completed: true, // B1: lo marcamos “hecho” al guardar
+    workout_completed: done,
     menu_adherence_pct: Math.max(0, Math.min(100, adh)),
+    notes,
     updated_at: new Date().toISOString()
   };
 
@@ -390,28 +399,6 @@ onTap("btnRegen", () => {
 
 onTap("btnWipe", () => {
   wipeAppStorage();
-  rerender();
-});
-  onTap("btnSaveFeedback", () => {
-  const done =
-    (document.getElementById("fbTrainDone") as HTMLInputElement | null)?.checked ?? false;
-
-  const adh = Number(
-    (document.getElementById("fbAdh") as HTMLInputElement | null)?.value ?? "0"
-  );
-
-  const notes = (document.getElementById("fbNotes") as HTMLTextAreaElement | null)?.value ?? "";
-
-  const fb: DayFeedback = {
-    schema_version: 1,
-    date,
-    workout_completed: done,
-    menu_adherence_pct: Math.max(0, Math.min(100, adh)),
-    notes,
-    updated_at: new Date().toISOString()
-  };
-
-  saveFeedback(fb);
   rerender();
 });
 }
