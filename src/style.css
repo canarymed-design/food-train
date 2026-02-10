@@ -263,7 +263,8 @@ body {
   gap: 8px;
 }
 /* =========================
-   Coach UI (Opción 2)
+   Coach UI (Opción 2) + Tabbar + Workout Coach Card
+   (bloque único limpio, sin duplicaciones)
    ========================= */
 
 .coach-head {
@@ -325,6 +326,7 @@ body {
 
 /* Workout blocks */
 .wk-block { margin-top: 12px; }
+
 .wk-block-h {
   font-weight: 800;
   margin-bottom: 8px;
@@ -342,6 +344,146 @@ body {
 
 .wk-name { font-weight: 750; }
 .wk-meta { color: var(--muted2); font-size: 12px; margin-top: 4px; }
+
+/* =========================
+   Coach Card (Workout) — premium
+   ========================= */
+
+.coach-card {
+  padding: 14px;
+}
+
+.coach-card-hero {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.coach-card-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.coach-kicker {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  font-weight: 800;
+}
+
+.coach-title-hero {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-top: 6px;
+  line-height: 1.08;
+}
+
+.coach-subline {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.coach-note {
+  margin-top: 10px;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.coach-card-hero-media {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  display: grid;
+  place-items: center;
+}
+
+.coach-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.95;
+}
+
+.coach-cta-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.btn.coach-primary {
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 850;
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.btn.coach-link {
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.btn.coach-link:hover {
+  color: var(--text);
+}
+
+.coach-card-mini {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.mini-pill {
+  flex: 1 1 auto;
+  min-width: 140px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  border-radius: 12px;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mini-label {
+  color: var(--muted2);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.mini-value {
+  color: var(--text);
+  font-weight: 900;
+  font-size: 12px;
+}
+
+/* Responsive: en pantallas estrechas, imagen abajo */
+@media (max-width: 420px) {
+  .coach-card-hero {
+    grid-template-columns: 1fr;
+  }
+  .coach-card-hero-media {
+    height: 160px;
+  }
+}
 
 /* =========================
    Tab bar
