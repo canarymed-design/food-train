@@ -335,12 +335,12 @@ async function render() {
     </div>
 
     <div class="coach-card-hero-media">
-      <img
-        class="coach-img"
-        src="/food-train/assets/mock/workout.jpg"
-        alt="Workout"
-        loading="lazy"
-      />
+<img
+  class="coach-img"
+  src="/food-train/assets/coach/workout-strength.jpg"
+  alt="Entrenamiento de fuerza"
+  loading="lazy"
+/>
     </div>
   </div>
 
