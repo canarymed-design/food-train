@@ -398,15 +398,19 @@ onTap("btnWipe", () => {
   const adh = Number(
     (document.getElementById("fbAdh") as HTMLInputElement | null)?.value ?? "0"
   );
-  const notes = (document.getElementById("fbNotes") as HTMLTextAreaElement | null)?.value ?? "";
+
+  // OJO: el textarea DEBE llamarse fbNotes
+  const notesEl = document.getElementById("fbNotes") as HTMLTextAreaElement | null;
+  const notes = notesEl ? notesEl.value : "";
+
   const fb: DayFeedback = {
-  schema_version: 1,
-  date,
-  workout_completed: done,
-  menu_adherence_pct: Math.max(0, Math.min(100, adh)),
-  ...(notes.trim() ? { notes: notes.trim() } : {}),
-  updated_at: new Date().toISOString()
-};
+    schema_version: 1,
+    date,
+    workout_completed: done,
+    menu_adherence_pct: Math.max(0, Math.min(100, adh)),
+    notes: notes, // <-- SIEMPRE guardamos notes
+    updated_at: new Date().toISOString()
+  };
 
   saveFeedback(fb);
   rerender();
