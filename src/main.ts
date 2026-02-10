@@ -108,6 +108,7 @@ const feedback: DayFeedback = existingFb ?? {
   date,
   workout_completed: false,
   menu_adherence_pct: 0,
+  notes: "",
   updated_at: new Date().toISOString()
 };
   const workouts = getCatalog<any[]>("app:catalog:workouts");
