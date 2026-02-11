@@ -361,31 +361,36 @@ async function render() {
   </div>
 </article>
 
-      <article class="card">
-        <div class="card-h">
-          <div class="emoji">🍽️</div>
-          <div>
-            <div class="card-t">${locale === "es" ? "Menú sugerido" : "Suggested menu"}</div>
-            <div class="card-s">${menuTitle}</div>
-          </div>
-        </div>
+<article class="card coach-card">
+  <div class="coach-card-hero">
+    <div class="coach-card-hero-text">
+      <div class="coach-kicker">${locale === "es" ? "Menú sugerido" : "Suggested menu"}</div>
+      <div class="coach-title-hero">${menuTitle}</div>
 
-        <div class="meta">
-          ${menu ? h("Kcal", String(menu.kcal_total ?? "-")) : ""}
-          ${menu?.macros_g ? h(locale === "es" ? "Macros" : "Macros", formatMacros(menu.macros_g)) : ""}
-          ${h(locale === "es" ? "Carbos" : "Carb label", String(plan.targets?.carb_label ?? "-"))}
-          ${menu ? h(locale === "es" ? "Bias menú" : "Menu bias", String(menu.carb_bias)) : ""}
-        </div>
+      <div class="coach-subline">
+        ${menu?.kcal_total ?? "-"} kcal · ${menu?.carb_bias ?? ""}
+      </div>
 
-        <div class="mini-actions">
-          <button class="btn ghost" id="btnViewMenu">${locale === "es" ? "Ver menú" : "View menu"}</button>
-          <button class="btn" id="btnChangePlan">${locale === "es" ? "Cambiar" : "Change"}</button>
-        </div>
+      <div class="coach-cta-row">
+        <button class="btn coach-primary" id="btnViewMenu">
+          ${locale === "es" ? "Ver menú" : "View menu"}
+        </button>
+        <button class="btn coach-link" id="btnChangePlan">
+          ${locale === "es" ? "Cambiar" : "Change"} →
+        </button>
+      </div>
+    </div>
 
-        <div class="muted tiny">
-          ${locale === "es" ? "“Cambiar” regenera el plan de hoy (MVP)." : "“Change” regenerates today's plan (MVP)."}
-        </div>
-      </article>
+    <div class="coach-card-hero-media">
+      <img
+        class="coach-img"
+        src="/food-train/assets/coach/menu-default.jpg"
+        alt="Menú saludable"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</article>
 
       ${
         adjustment
