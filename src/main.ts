@@ -337,7 +337,11 @@ async function render() {
     <div class="coach-card-hero-media">
 <img
   class="coach-img"
-  src="/food-train/assets/coach/workout-strength.jpg"
+src={`/food-train/assets/coach/${
+  plan.meta?.is_training_day
+    ? "workout-strength.jpg"
+    : "workout-rest.jpg"
+}`}
   alt="Entrenamiento de fuerza"
   loading="lazy"
 />
