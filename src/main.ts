@@ -491,7 +491,27 @@ src={`/food-train/assets/coach/${
       </article>
     </section>
   `;
+function getWorkoutImage() {
+  if (!plan.meta?.is_training_day) return "workout-rest.jpg";
 
+  const type = workout?.type?.toLowerCase?.() ?? "";
+
+  switch (type) {
+    case "strength":
+      return "workout-strength.jpg";
+    case "cardio":
+      return "workout-cardio.jpg";
+    case "hiit":
+      return "workout-hiit.jpg";
+    case "mobility":
+    case "stretching":
+      return "workout-mobility.jpg";
+    default:
+      return "workout-default.jpg";
+  }
+}
+
+const workoutImage = getWorkoutImage();
   const progressView = `
     <section class="grid">
       <article class="card">
