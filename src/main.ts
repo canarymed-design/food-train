@@ -337,12 +337,8 @@ async function render() {
     <div class="coach-card-hero-media">
 <img
   class="coach-img"
-src={`/food-train/assets/coach/${
-  plan.meta?.is_training_day
-    ? "workout-strength.jpg"
-    : "workout-rest.jpg"
-}`}
-  alt="Entrenamiento de fuerza"
+  src={`/food-train/assets/coach/${workoutImage}`}
+  alt=${plan.meta?.is_training_day ? "Entrenamiento" : "Descanso"}
   loading="lazy"
 />
     </div>
@@ -491,6 +487,26 @@ src={`/food-train/assets/coach/${
       </article>
     </section>
   `;
+  const workoutImage = (() => {
+  // Descanso primero (manda sobre todo)
+  if (!plan.meta?.is_training_day) return "workout-rest.jpg";
+
+  const type = String(workout?.type ?? "").toLowerCase();
+
+  switch (type) {
+    case "strength":
+      return "workout-strength.jpg";
+    case "cardio":
+      return "workout-cardio.jpg";
+    case "hiit":
+      return "workout-hiit.jpg";
+    case "mobility":
+    case "stretching":
+      return "workout-mobility.jpg";
+    default:
+      return "workout-default.jpg";
+  }
+})();
 function getWorkoutImage() {
   if (!plan.meta?.is_training_day) return "workout-rest.jpg";
 
